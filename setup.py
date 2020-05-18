@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+#
+# Author: LucasD11 <yuanzhendai@gmail.com>
+#
 import setuptools
 
 with open("README.md", "r") as fh:
@@ -5,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="nameunity",
-    version="0.0.1",
+    version="0.1.0",
     author="LucasD11",
     author_email="yuanzhendai@gmail.com",
     description="A simple tool to help you unity file names.",
