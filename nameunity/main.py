@@ -16,7 +16,7 @@ import os
 import sys
 import argparse
 import shutil
-from formatters import UnknownFormat, FORMATTER_CLASSES
+from lib.formatters import UnknownFormat, FORMATTER_CLASSES
 
 
 DEBUG=False
@@ -87,7 +87,10 @@ def main(args=sys.argv[1:]):
         ts = None
         for formatter in formatters:
             try:
-                ts = formatter.format(filename)
+                ts = formatter.format(
+                    filename,
+                    path=os.path.join(args.source, filename)
+                )
                 break
             except UnknownFormat:
                 continue

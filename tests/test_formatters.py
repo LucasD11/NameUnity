@@ -1,7 +1,7 @@
 # Author: LucasD11 <yuanzhendai@gmail.com>
 
 from unittest import TestCase
-from nameunity import formatters
+from nameunity.lib import formatters
 
 
 class TestFormatter1(TestCase):
