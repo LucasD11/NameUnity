@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="nameunity",
-    version="0.2.3",
+    version="0.2.4",
     author="LucasD11",
     author_email="yuanzhendai@gmail.com",
     description="A simple tool to help you unity file names.",
