@@ -58,7 +58,7 @@ def parse_args(args):
 def rename(source, target, filename, ts, dry_run):
     source_path = os.path.join(source, filename)
 
-    target_filename = ts.strftime("%Y%m%d-%H%M%S.") + filename.split('.')[-1]
+    target_filename = ts.strftime("%Y/%m/%Y%m%d-%H%M%S.") + filename.split('.')[-1]
     target_filepath = os.path.join(target, target_filename)
     copied = copy_file(source_path, target_filepath, dry_run)
     if DEBUG and copied:

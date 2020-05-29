@@ -20,6 +20,9 @@ def copy_file(source, target, dry_run=False):
     Copy file if there is no duplicate.
     """
     duplicate = 0
+    if not os.path.isdir(os.path.dirname(target)):
+        os.makedirs(os.path.dirname(target))
+
     while os.path.exists(target):
         if _md5(source) == _md5(target):
             return None

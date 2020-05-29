@@ -65,6 +65,26 @@ class Formatter24(Formatter):
     FORMAT = "%Y-%m-%d %H.%M.%S-1.png"
 
 
+class Formatter3(Formatter):
+    "Formatter for files handled by NameUnity"
+    FORMAT = "%Y%m%d-%H%M%S.png"
+
+
+class Formatter31(Formatter):
+    "Formatter for files handled by NameUnity"
+    FORMAT = "%Y%m%d-%H%M%S.jpg"
+
+
+class Formatter32(Formatter):
+    "Formatter for files handled by NameUnity"
+    FORMAT = "%Y%m%d-%H%M%S.1.png"
+
+
+class Formatter33(Formatter):
+    "Formatter for files handled by NameUnity"
+    FORMAT = "%Y%m%d-%H%M%S.1.jpg"
+
+
 class FormatterDate(Formatter):
     def format(self, s, path):
         if s.lower().endswith('.jpg') or s.lower().endswith('.png'):
@@ -77,5 +97,6 @@ class FormatterDate(Formatter):
 FORMATTER_CLASSES = [
     Formatter1, Formatter11, Formatter12, Formatter13,
     Formatter2, Formatter21, Formatter22, Formatter23, Formatter24,
+    Formatter3, Formatter31, Formatter32, Formatter33,
     FormatterDate
 ]
