@@ -15,8 +15,8 @@ A simple tool to help you unity file names.
 import os
 import sys
 import argparse
-import shutil
 from lib.formatters import UnknownFormat, FORMATTER_CLASSES
+from lib.copy_file import copy_file
 
 
 DEBUG=False
@@ -58,20 +58,11 @@ def parse_args(args):
 def rename(source, target, filename, ts, dry_run):
     source_path = os.path.join(source, filename)
 
-    duplicate = 0
     target_filename = ts.strftime("%Y%m%d-%H%M%S.") + filename.split('.')[-1]
     target_filepath = os.path.join(target, target_filename)
-    while os.path.exists(target_filepath):
-        duplicate += 1
-        target_filename = ts.strftime("%Y%m%d-%H%M%S") + "_" + str(duplicate) \
-            + '.' + filename.split('.')[-1]
-        target_filepath = os.path.join(target, target_filename)
-
-    if DEBUG:
-        print("Rename %s to %s" % (source_path, target_filepath))
-
-    if not dry_run:
-        shutil.move(source_path, target_filepath)
+    copied = copy_file(source_path, target_filepath, dry_run)
+    if DEBUG and copied:
+        print("Rename %s to %s" % (source_path, copied))
 
 
 def main(args=sys.argv[1:]):
