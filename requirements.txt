@@ -7,4 +7,4 @@ pyobjc-core==6.2
 pyobjc-framework-Cocoa==6.2
 pyobjc-framework-Quartz==6.2
 PyUserInput==0.1.11
-Pillow==7.1.2
+Pillow==10.0.1
